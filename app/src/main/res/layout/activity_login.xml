@@ -21,7 +21,7 @@
 
         <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             app:alignContent="stretch"
             app:alignItems="flex_start"
             app:flexDirection="column"
@@ -90,6 +90,13 @@
                 android:layout_height="wrap_content"
                 android:text="沒有帳號?點這裡註冊"
                 app:layout_alignSelf="center"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/google_sign_in_button"-->
+<!--                android:layout_width="130dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                app:layout_alignSelf="center"-->
+<!--                android:text="Google"/>-->
 
         </com.google.android.flexbox.FlexboxLayout>
 
