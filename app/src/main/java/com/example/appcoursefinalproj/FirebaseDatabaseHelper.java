@@ -2,6 +2,7 @@ package com.example.appcoursefinalproj;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,6 +43,31 @@ public class FirebaseDatabaseHelper {
             }
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+    }
+
+    public void addChat(Chat chat, final DataStatus dataStatus) {
+        String key = mReferenceChats.push().getKey();
+        mReferenceChats.child(key).setValue(chat).addOnSuccessListener(new OnSuccessListener<Void>(){
+            public void onSuccess(Void aVoid) {
+                dataStatus.DataIsInserted();
+            }
+        });
+    }
+
+    public void updateChat(String key, Chat chat, final DataStatus dataStatus) {
+        mReferenceChats.child(key).setValue(chat).addOnSuccessListener(new OnSuccessListener<Void>() {
+            public void onSuccess(Void aVoid) {
+                dataStatus.DataIsUpdated();
+            }
+        });
+    }
+
+    public void deleteChat(String key, final DataStatus dataStatus) {
+        mReferenceChats.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
+            public void onSuccess(Void aVoid) {
+                dataStatus.DataIsDeleted();
             }
         });
     }

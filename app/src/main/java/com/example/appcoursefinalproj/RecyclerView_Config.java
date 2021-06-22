@@ -1,7 +1,9 @@
 package com.example.appcoursefinalproj;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -37,6 +39,19 @@ public class RecyclerView_Config {
             mName = (TextView) itemView.findViewById(R.id.name_txtView);
             mDate = (TextView) itemView.findViewById(R.id.date_txtView);
             mContent = (TextView) itemView.findViewById(R.id.content_txtView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, ChatDetailsActivity.class);
+                    intent.putExtra("key", key);
+                    intent.putExtra("name", mName.getText().toString());
+                    intent.putExtra("content", mContent.getText().toString());
+                    intent.putExtra("date", mDate.getText().toString());
+
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
         public void bind(Chat chat, String key) {

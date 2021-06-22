@@ -9,6 +9,7 @@
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#2500CDD4"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         app:alignContent="stretch"
@@ -23,8 +24,11 @@
             android:layout_height="300dp"
             app:alignContent="stretch"
             app:alignItems="flex_start"
+            app:flexDirection="column"
             app:flexWrap="wrap"
-            app:justifyContent="flex_start">
+            app:justifyContent="space_between"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="216dp">
 
             <TextView
                 android:id="@+id/textView1"
@@ -43,7 +47,8 @@
                     android:id="@+id/etRegEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="email" />
+                    android:hint="email"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -63,7 +68,9 @@
                     android:id="@+id/etRegPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="password" />
+                    android:hint="password"
+                    android:inputType="textPassword"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,13 +80,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="註冊"
+                app:layout_alignSelf="center"
                 tools:layout_editor_absoluteY="235dp" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="已經有帳號了?點這裡登入" />
+                android:text="已經有帳號了?點這裡登入"
+                app:layout_alignSelf="center" />
 
 
         </com.google.android.flexbox.FlexboxLayout>

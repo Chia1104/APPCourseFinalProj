@@ -16,13 +16,6 @@
         app:justifyContent="flex_end"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/signOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SignOut"
-            app:layout_alignSelf="flex_start"
-            tools:layout_editor_absoluteY="56dp" />
 
     </com.google.android.flexbox.FlexboxLayout>
 
@@ -30,8 +23,56 @@
         android:id="@+id/recyclerview_chats"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="56dp"
+        android:layout_marginBottom="100dp"
+        android:background="#2500CDD4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_chats"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:text="Profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_chats"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextContent"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="content"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_chats"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:text="Send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_chats" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
